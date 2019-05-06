@@ -13,4 +13,6 @@ router.route('/').get(usersController.createUser);
 
 router.route('/').get(usersController.updateUser);
 
+router.route('/').get(usersController.deleteUser);
+
 module.exports = router;

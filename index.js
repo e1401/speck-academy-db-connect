@@ -19,6 +19,19 @@ const { createUserHandler } = require('./route-handlers');
 
 const { updateUserHandler } = require('./route-handlers');
 
+const { deleteUserHandler } = require('./route-handlers');
+
+const { reservationsHandler } = require('./route-handlers');
+
+const { reservationByIdHandler } = require('./route-handlers');
+
+const { createReservationHandler } = require('./route-handlers');
+
+const { updateReservationHandler } = require('./route-handlers');
+
+const { deleteReservationHandler } = require('./route-handlers');
+
+
 const router = new express.Router();
 const app = express();
 const port = 3000;
@@ -54,6 +67,24 @@ router.use('/users/:id', userByIdHandler);
 router.use('/users', createUserHandler);
 
 router.use('/users', updateUserHandler);
+
+router.use('/users', deleteUserHandler);
+
+
+//reservations
+
+router.use('/reservations', reservationsHandler);
+
+router.use('/reservations/:id', reservationByIdHandler);
+
+router.use('/reservations', createReservationHandler);
+
+router.use('/reservations', updateReservationHandler);
+
+router.use('/reservations', deleteReservationHandler)
+
+
+
 
 // Test route
 router.get('/', (req, res) => {
