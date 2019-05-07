@@ -23,6 +23,8 @@ const getHallById = (_req, res, next) => {
     })
 }
 
+
+
 const createHall = (_req, res, next) => {
 
     const { hall_name, hall_address } = request.body;
